@@ -1,0 +1,261 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FD32CC04-8A0A-4A72-B09E-EB95CD0F47AA}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EV9000RecPlayer</RootNamespace>
+    <AssemblyName>S50SVRPlayer</AssemblyName>
+    <ApplicationIcon>HwAlarmSvr.ico</ApplicationIcon>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CSEV9000APP, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\program\CSEV9000APP\CSEV9000APP\bin\Release\CSEV9000APP.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Control\ABOUTEV9000.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\ABOUTEV9000.designer.cs">
+      <DependentUpon>ABOUTEV9000.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\CommonModel.cs" />
+    <Compile Include="Control\EV9000Config.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\EV9000Config.Designer.cs">
+      <DependentUpon>EV9000Config.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\EV9000List.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\EV9000List.Designer.cs">
+      <DependentUpon>EV9000List.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\EV9000Panel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Control\EV9000PlayList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\EV9000PlayList.Designer.cs">
+      <DependentUpon>EV9000PlayList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\MaxPlayWindows.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Control\MaxPlayWindows.Designer.cs">
+      <DependentUpon>MaxPlayWindows.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\ScrollBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\ScrollBar.Designer.cs">
+      <DependentUpon>ScrollBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\VideoClip.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\VideoClip.Designer.cs">
+      <DependentUpon>VideoClip.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EventHander\EventHander.cs" />
+    <Compile Include="Event\EV9000Event.cs" />
+    <Compile Include="IEV9000Player.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IEV9000Player.Designer.cs">
+      <DependentUpon>IEV9000Player.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\Menu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\Menu.Designer.cs">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Control\ABOUTEV9000.resx">
+      <DependentUpon>ABOUTEV9000.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\EV9000Config.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>EV9000Config.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\EV9000List.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>EV9000List.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\EV9000PlayList.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>EV9000PlayList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\MaxPlayWindows.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>MaxPlayWindows.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\ScrollBar.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ScrollBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\VideoClip.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>VideoClip.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IEV9000Player.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>IEV9000Player.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\Menu.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Util\RunLogReport.cs" />
+    <Compile Include="Util\VideoFile.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="EV9000Player.ico" />
+    <Content Include="HwAlarmSvr.ico" />
+    <None Include="Resources\recording.jpg" />
+    <None Include="Resources\about_bg.png" />
+    <None Include="Resources\splider.jpg" />
+    <None Include="Resources\pause.jpg" />
+    <None Include="Resources\pause_on.jpg" />
+    <None Include="Resources\listbgfocus.jpg" />
+    <None Include="Resources\listbg.jpg" />
+    <None Include="Resources\listscrollbar.jpg" />
+    <None Include="Resources\listscroll_bg.jpg" />
+    <None Include="Resources\arrow_up_on.jpg" />
+    <None Include="Resources\arrow_up.jpg" />
+    <None Include="Resources\arrow_down_on.jpg" />
+    <None Include="Resources\arrow_down.jpg" />
+    <None Include="Resources\remove_on.jpg" />
+    <None Include="Resources\remove.jpg" />
+    <None Include="Resources\clear_on.jpg" />
+    <None Include="Resources\clear.jpg" />
+    <None Include="Resources\carmera_on.jpg" />
+    <None Include="Resources\carmera.jpg" />
+    <None Include="Resources\add_on.jpg" />
+    <None Include="Resources\add.jpg" />
+    <None Include="Resources\scrollbar_bg.jpg" />
+    <None Include="Resources\scrollbarmove_bg.jpg" />
+    <None Include="Resources\wnd_normal_on.jpg" />
+    <None Include="Resources\wnd_normal.jpg" />
+    <None Include="Resources\stop_on.jpg" />
+    <None Include="Resources\stop.jpg" />
+    <None Include="Resources\set_on.jpg" />
+    <None Include="Resources\set.jpg" />
+    <None Include="Resources\record_on.jpg" />
+    <None Include="Resources\record.jpg" />
+    <None Include="Resources\preview_on.jpg" />
+    <None Include="Resources\preview.jpg" />
+    <None Include="Resources\play_on.jpg" />
+    <None Include="Resources\play.jpg" />
+    <None Include="Resources\openvol_on.jpg" />
+    <None Include="Resources\openvol.jpg" />
+    <None Include="Resources\novol_on.jpg" />
+    <None Include="Resources\novol.jpg" />
+    <None Include="Resources\next_on.jpg" />
+    <None Include="Resources\next.jpg" />
+    <None Include="Resources\maxwnd_on.jpg" />
+    <None Include="Resources\maxwnd.jpg" />
+    <None Include="Resources\goback_on.jpg" />
+    <None Include="Resources\goback.jpg" />
+    <None Include="Resources\forward_on.jpg" />
+    <None Include="Resources\forward.jpg" />
+    <None Include="Resources\capture_on.jpg" />
+    <None Include="Resources\capture.jpg" />
+    <None Include="Resources\separate.jpg" />
+    <None Include="Resources\openmeun.jpg" />
+    <None Include="Resources\openmenu_on.jpg" />
+    <None Include="Resources\hide_playlist_on.jpg" />
+    <None Include="Resources\hide_playlist.jpg" />
+    <None Include="Resources\window_normal_on.jpg" />
+    <None Include="Resources\window_normal.jpg" />
+    <None Include="Resources\window_min_on.jpg" />
+    <None Include="Resources\window_min.jpg" />
+    <None Include="Resources\window_max_on.jpg" />
+    <None Include="Resources\window_max.jpg" />
+    <None Include="Resources\close_on.jpg" />
+    <None Include="Resources\close.jpg" />
+    <None Include="Resources\move_bar.png" />
+    <None Include="Resources\tool_bg.jpg" />
+    <None Include="Resources\top_bg.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
